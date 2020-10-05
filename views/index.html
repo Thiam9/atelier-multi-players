@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import tailwind css pour disign -->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Math-Game</title>
+</head>
+
+<body class="bg-blue-400 ">
+
+
+    <div id="intro" class="container flex flex-col  justify-center items-center m-auto h-screen">
+
+
+        <h1 class="text-4xl font-bold text-white">
+            Bienvenue dans <span class="text-purple-700" style="color: #ffbdff ">calcule mentale Game
+            </span>
+        </h1>
+        <p class="font-bold text-white text-justify">
+            Ce jeu de maths multijoueurs est un projet que j'ai réalisé pour ma formation Full stack JS.
+            Le jeu est codé avec Socket io, node Js ,express js, HTML et Tailwind css. Plusieurs utilisateurs peuvent
+            s'affronter en même temps. Le but du jeu consiste à répondre aux questions le plus rapidement possible, le
+            plus rapide aura le plus de points. Bonne chance!
+        </p>
+
+
+        <form class="bg-white w-1/2 w-64 rounted-md p-6 mt-6 text-center .shadow-md" id="user">
+            <h2 class="text-2xl font-bold mb-4 " style="color: #4915bb ">
+                Entrer votre nom de joueur
+            </h2>
+            <input id="nom" class="d-block rounded w-full border border-gray-500 shadow p-4" type="text"
+                placeholder="Entrez votre nom et tapez la touche Entrer" />
+        </form>
+        <div class="mt-4">
+            <span class="block text-gray-700 text-center italic text-xs bold">Copyright Ibrahima Thiam aka Lamine
+                Thiam.</span>
+
+        </div>
+
+    </div>
+    <!-- container jeu -->
+
+    <div class="container flex flex-col  justify-center items-center h-screen m-auto   hidden" id="jeu">
+
+        <div class="fixed top-0 right-0 bg-white  rounted p-6 shadow-md mt-2 mr-4 text-center">
+
+            <h3 class=" font-bold border-b border-gray-500 pb-4 mb-4">Joueurs</h3>
+            <ul id='joueurClassement'>
+
+            </ul>
+        </div>
+        <h3 class="text-2xl font-bold text-white">
+            Repondez aux question ci-dessous:
+        </h3>
+
+        <form action="" class="bg-white w-1/2 w-64 rounted p-6 shadow-md mt-4" id="submission">
+            <h1 class="text-4xl  mb-4 text-center" id="question"> </h1>
+            <input id="reponse" class="d-block rounded-md w-full border border-gray-500 shadow p-4" type="text"
+                placeholder="Entrez votre reponse et tapez la touche Entrer" />
+        </form>
+
+    </div>
+
+
+
+    <!-- import socket io -->
+    <script src="/socket.io/socket.io.js" defer></script>
+    <!-- import le fichier script js-->
+    <script src="/script.js" defer></script>
+
+</body>
+
+</html>
