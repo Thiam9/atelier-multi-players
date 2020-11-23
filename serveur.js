@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    // console.log(socket.id + ' a user connected');
+
     socket.on('utilisateur', (nom) => {
 
         const joueur = {
@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
         }
 
         joueurs.push(joueur);
-        // console.log(nom, 'est connceté');
+
         updateJeu();
     });
 
